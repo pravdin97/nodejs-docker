@@ -1,11 +1,12 @@
 const express = require('express');
+const path = require('path');
 
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
 const app = express();
 app.get('/', (req, res) => {
-  res.send('HELLO WORLD!');
+  res.sendFile(path.resolve(__dirname, 'htmls', 'index.html'));
 });
 
 app.listen(PORT, HOST);
